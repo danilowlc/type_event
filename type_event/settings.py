@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from django.contrib.messages import constants
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,11 +10,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x0e15_h4ht!ysogfpte7lqw5)iqr%%k+n6wc8mg=ba55e0&v&*'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)#a opção cast declara o tipo.
 
 ALLOWED_HOSTS = []
 
