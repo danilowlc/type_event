@@ -1,6 +1,5 @@
 from django.shortcuts import render
-
-from .models import Certificado
+from eventos.models import Certificado
 
 # Create your views here.
 def meus_certificados(request):
